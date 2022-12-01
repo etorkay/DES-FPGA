@@ -6,8 +6,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 --the entity
 entity PC_1 is
-	port(	PC_IN : in std_logic_vector(63 downto 0);			--initialise PC-1 input
-			PC_OUT : out std_logic_vector(55 downto 0));		--initialise PC-1 output
+	port(	PC_IN : in std_logic_vector(0 to 63);			--initialise PC-1 input
+			PC_OUT : out std_logic_vector(0 to 55));		--initialise PC-1 output
 end PC_1;
 
 --the architecture 

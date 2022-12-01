@@ -7,8 +7,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity PC2 is
     port(
-        INPUT: IN STD_LOGIC_VECTOR(55 downto 0);
-        OUTPUT: OUT STD_LOGIC_VECTOR(47 downto 0)
+        INPUT: IN STD_LOGIC_VECTOR(0 to 55);
+        OUTPUT: OUT STD_LOGIC_VECTOR(0 to 47)
     );
 end PC2;
 
