@@ -89,25 +89,36 @@ architecture Structural of DES is
     );
     end component;
 
-    --component COUNT --todo: IMPLEMENT COUNTER
-    --end component;
+    component COUNT 
+        port(
+            UP, CLK: IN STD_LOGIC;
+            DONE: OUT STD_LOGIC;    --outputs 1 if count is 1111
+            OUTPUT: OUT STD_LOGIC_VECTOR(3 downto 0)
+        );
+    end component;
 
 
 
 begin
 
     --port connection
-    --CNT0: COUNT port map();
+    CNT0: COUNT port map(
+        UP => , 
+        CLK => , 
+        DONE => , 
+        OUTPUT =>
+    );
+
     IP1: IP port map(
         INPUT => ,
         OUTPUT =>
     );
 
     MUXD1: MUX GENERIC MAP(32) port map(
-            INPUT_0 => , 
-            INPUT_1 => ,
-            sel => ,
-            OUTPUT =>
+        INPUT_0 => , 
+        INPUT_1 => ,
+        sel => ,
+        OUTPUT =>
     );
     MUXD2: MUX GENERIC MAP(32) port map(
         INPUT_0 => , 
@@ -116,8 +127,20 @@ begin
         OUTPUT =>
     );
 
-    REGD1: regN GENERIC MAP(32) port map();
-    REGD2: regN GENERIC MAP(32) port map();
+    REGD1: regN GENERIC MAP(32) port map(
+        D => ,
+        Q => ,
+        CLK =>, 
+        CLR => , 
+        LOAD =>
+    );
+    REGD2: regN GENERIC MAP(32) port map(
+        D => ,
+        Q => ,
+        CLK =>, 
+        CLR => , 
+        LOAD =>
+    );
 
     FUNCT0: FUNCT port map(
         INPUT => ,
