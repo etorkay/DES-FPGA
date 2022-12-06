@@ -55,12 +55,12 @@ architecture Structural of KEY_GEN is
         );
     end component;
 
-    component regN
-        generic(n: positive);
-        port(
-            D: IN STD_LOGIC_VECTOR(n-1 downto 0);
-            Q: OUT STD_LOGIC_VECTOR(n-1 downto 0);
-            CLK, CLR, LOAD: IN STD_LOGIC
+    --component regN
+    --   generic(n: positive);
+    --  port(
+    --        D: IN STD_LOGIC_VECTOR(n-1 downto 0);
+    --        Q: OUT STD_LOGIC_VECTOR(n-1 downto 0);
+    --        CLK, CLR, LOAD: IN STD_LOGIC
         );
     end component;
 
