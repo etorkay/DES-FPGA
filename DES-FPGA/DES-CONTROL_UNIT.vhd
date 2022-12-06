@@ -14,7 +14,7 @@ entity CONTROL_UNIT is
 		dLoad, kLoad, upCount, clrCount, muxSel, rLoad, outEn : out std_logic;
 		
 		--status signal from datapath
-		counter : in std_logic_vector(3 downto 0)
+		counter : in std_logic_vector(4 downto 0)
 		
 	);
 end CONTROL_UNIT;
@@ -59,12 +59,20 @@ begin
 				
 			when ST1 =>
 				controls <= "0010-00";
-				if (counter = "0001") then
-					NS <= ST2;
-				elsif ( counter > "0001") then
-					NS <= ST3;
-				else
+--				if (counter = "00000") then
+--					NS <= ST2;
+--				elsif ( counter < "1111") then
+--					NS <= ST3;
+--				else
+--					NS <= ST7;
+--				end if;
+				
+				if(counter > "01111") then
 					NS <= ST7;
+				elsif(counter = "00000") then
+					NS <= ST2;
+				elsif(counter > "00000") then 
+					NS <= ST3;
 				end if;
 					
 			when ST2 =>
@@ -93,7 +101,11 @@ begin
 				
 			when ST8 =>
 				controls <= "0000-01";
-				NS <= ST8;
+				if (CLR = '1') then
+					NS <= ST0;
+				else
+					NS <= ST8;
+				end if;
 				
 			when others =>
 				NS <= ST0;

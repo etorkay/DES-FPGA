@@ -97,7 +97,7 @@ architecture Structural of DES is
 
     component COUNT 
         port(
-            UP, CLK: IN STD_LOGIC;
+            UP, CLK, CLR: IN STD_LOGIC;
             DONE: OUT STD_LOGIC;    --outputs 1 if count is 1111
             OUTPUT: OUT STD_LOGIC_VECTOR(3 downto 0)
         );
@@ -109,7 +109,8 @@ begin
 
     --port connection
     CNT0: COUNT port map(
-        UP => , 
+        UP => ,
+		  CLR => CLR,
         CLK => CLK, 
         DONE => , 
         OUTPUT =>
