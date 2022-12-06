@@ -14,7 +14,7 @@ entity CONTROL_UNIT is
 		dLoad, kLoad, upCount, clrCount, muxSel, rLoad, outEn : out std_logic;
 		
 		--status signal from datapath
-		counter : in std_logic
+		counter : in std_logic_vector(3 downto 0)
 		
 	);
 end CONTROL_UNIT;
@@ -45,7 +45,7 @@ begin
 			PS <= NS;
 		end if;
 		
-	end process sync_process;
+	end process sync_proc;
 		
 	--combinatory process
 	comb_proc : process(PS, counter)
@@ -64,7 +64,7 @@ begin
 				elsif ( counter > "0001") then
 					NS <= ST3;
 				else
-					NS <= ST9;
+					NS <= ST7;
 				end if;
 					
 			when ST2 =>
@@ -99,7 +99,7 @@ begin
 				NS <= ST0;
 		end case;
 	
-	end process comb_process;
+	end process comb_proc;
 
 end Structural;
 

@@ -22,7 +22,7 @@ architecture Behavioral of COUNT is
 
 begin
     --synchronous upcounter
-    count : process(CLK, tmp)
+    count : process(CLK, CLR, tmp)
     begin
         if (CLR = '1') then
 				OUTPUT <= "0000";
