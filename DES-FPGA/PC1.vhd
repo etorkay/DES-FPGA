@@ -7,7 +7,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity PC1 is
     port(
-        INPUT: IN STD_LOGIC_VECTOR(0 to 63);
+        INPUT: IN STD_LOGIC_VECTOR(63 downto 0);
         OUTPUT: OUT STD_LOGIC_VECTOR(0 to 55)
     );
 end PC1;
@@ -21,7 +21,7 @@ architecture Behavioral of PC1 is
 begin
     PC1 : process(INPUT)
     begin
-        for i in 0 to 55 loop
+        for i in 55 downto 0 loop
             OUTPUT(i) <= INPUT(r_PC1(i));
         end loop ; -- iterate
     end process ; -- PC1
