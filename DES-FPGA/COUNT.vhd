@@ -9,9 +9,9 @@ use IEEE.NUMERIC_STD.ALL;
 --entity
 entity COUNT is
     port(
-        UP, CLK: IN STD_LOGIC;
+        UP, CLK, CLR: IN STD_LOGIC;
         DONE: OUT STD_LOGIC;    --outputs 1 if count is 1111
-        OUTPUT: OUT STD_LOGIC_VECTOR(3 downto 0)
+        OUTPUT: OUT STD_LOGIC_VECTOR(4 downto 0)
     );
 end COUNT;
 
@@ -22,9 +22,11 @@ architecture Behavioral of COUNT is
 
 begin
     --synchronous upcounter
-    count : process(CLK, tmp)
+    count : process(CLK, CLR, tmp)
     begin
-        if (RISING_EDGE(CLK)) then
+        if (CLR = '1') then
+				OUTPUT <= "0000";
+		  elsif (RISING_EDGE(CLK)) then
 
            if (UP = '1') then
                 if(tmp = 15) then
@@ -34,11 +36,11 @@ begin
                     tmp <= tmp + 1;
                 end if;
             else
-                    tmp <= tmp;
+                   tmp <= tmp;
            end if ;
             
         end if ;
-        OUTPUT <= std_logic_vector(to_unsigned(tmp, 4));
+        OUTPUT <= std_logic_vector(to_unsigned(tmp, 5));
     end process ; -- count
 
 
