@@ -11,7 +11,7 @@ entity COUNT is
     port(
         UP, CLK, CLR: IN STD_LOGIC;
         DONE: OUT STD_LOGIC;    --outputs 1 if count is 1111
-        OUTPUT: OUT STD_LOGIC_VECTOR(4 downto 0)
+        OUTPUT: OUT STD_LOGIC_VECTOR(3 downto 0)
     );
 end COUNT;
 
@@ -24,23 +24,30 @@ begin
     --synchronous upcounter
     count : process(CLK, CLR, tmp)
     begin
-        if (CLR = '1') then
-				OUTPUT <= "0000";
-		  elsif (RISING_EDGE(CLK)) then
+		
+            if (RISING_EDGE(CLK)) then
 
-           if (UP = '1') then
-                if(tmp = 15) then
-                    tmp <= tmp;
-                    DONE <= '1';
+                if (CLR = '1') then
+                    tmp <= 0;
+
                 else
-                    tmp <= tmp + 1;
+                    
+                    if (UP = '1') then
+                        if(tmp = 15) then
+                            tmp <= tmp;
+                            DONE <= '1';
+                        else
+                            tmp <= tmp + 1;
+                        end if;
+                    else
+                        tmp <= tmp;
+                    end if ;
+
                 end if;
-            else
-                   tmp <= tmp;
-           end if ;
             
         end if ;
-        OUTPUT <= std_logic_vector(to_unsigned(tmp, 5));
+
+        OUTPUT <= std_logic_vector(to_unsigned(tmp, 4));
     end process ; -- count
 
 

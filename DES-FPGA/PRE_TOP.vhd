@@ -97,7 +97,7 @@ end component;
 
 component COUNT 
     port(
-        UP, CLK: IN STD_LOGIC;
+        UP, CLK, CLR: IN STD_LOGIC;
         DONE: OUT STD_LOGIC;    --outputs 1 if count is 1111
         OUTPUT: OUT STD_LOGIC_VECTOR(3 downto 0)
     );
@@ -111,6 +111,7 @@ begin
 CNT0: COUNT port map(
     UP => upCount, 
     CLK => CLK, 
+    CLR => CLR,
     DONE => doneSig, 
     OUTPUT => round_num
 );
