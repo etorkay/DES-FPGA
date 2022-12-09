@@ -42,8 +42,8 @@ architecture Structural of FUNCT is
 
     component PERM_PRIM
         port(
-            INPUT: IN STD_LOGIC_VECTOR(31 downto 0);
-            OUTPUT: OUT STD_LOGIC_VECTOR(31 downto 0)
+            INPUT: IN STD_LOGIC_VECTOR(0 to 31);
+            OUTPUT: OUT STD_LOGIC_VECTOR(0 to 31)
         );
     end component;
 

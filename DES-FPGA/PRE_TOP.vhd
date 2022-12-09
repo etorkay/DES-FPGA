@@ -12,8 +12,10 @@ entity PRE_TOP is
         KEY_INPUT: IN STD_LOGIC_VECTOR(63 downto 0);
 
         --control signals
-        muxSel, CLK, CLR, dLoad, upCount, functEn, keyMuxSel, keyLoad: IN STD_LOGIC;
-        doneSig: OUT STD_LOGIC;
+        muxSel, CLK, CLR, dLoad, upCount, functEn, keyMuxSel, keyLoad, cudone: IN STD_LOGIC;
+
+        --STATUS SIGNALS
+        CNT_STATUS: OUT STD_LOGIC_VECTOR(4 downto 0);
 
         OUTPUT: OUT STD_LOGIC_VECTOR(63 downto 0)
 
@@ -23,11 +25,12 @@ end PRE_TOP;
 --architecture
 architecture Structural of PRE_TOP is
 --internal signals
-signal ip_out, pre_output: STD_LOGIC_VECTOR(63 downto 0);
+signal ip_out, pre_output, tmp_output, pre_fp_out: STD_LOGIC_VECTOR(63 downto 0);
 signal l_mux_out, r_mux_out: STD_LOGIC_VECTOR(31 downto 0);
-signal round_num: STD_LOGIC_VECTOR(3 downto 0);
+signal round_num: STD_LOGIC_VECTOR(4 downto 0);
 signal key_out: STD_LOGIC_VECTOR(47 downto 0);
 signal l_reg_out, r_reg_out, funct_out, xor_out: STD_LOGIC_VECTOR(31 downto 0);
+signal donesig: STD_LOGIC;
 
 --component declaration
 component IP
@@ -88,7 +91,7 @@ port(
 
     --control signals
     muxSel, CLK, rLoad, CLR: IN STD_LOGIC;
-    schdl_sel: IN STD_LOGIC_VECTOR(3 downto 0);
+    schdl_sel: IN STD_LOGIC_VECTOR(4 downto 0);
 
 
     OUTPUT: OUT STD_LOGIC_VECTOR(47 downto 0)
@@ -99,7 +102,7 @@ component COUNT
     port(
         UP, CLK, CLR: IN STD_LOGIC;
         DONE: OUT STD_LOGIC;    --outputs 1 if count is 1111
-        OUTPUT: OUT STD_LOGIC_VECTOR(3 downto 0)
+        OUTPUT: OUT STD_LOGIC_VECTOR(4 downto 0)
     );
 end component;
 
@@ -175,10 +178,16 @@ KGEN0: KEY_GEN port map(
 
 
 pre_output <= l_reg_out & funct_out;
+CNT_STATUS <= round_num;
+pre_fp_out <= r_reg_out & l_reg_out;
+
+with cudone SELECT OUTPUT <= tmp_output when '1',
+                            (others => 'Z') when others;
+
 
 FP1: FP port map(   --concatenated after last round
-    INPUT => pre_output,
-    OUTPUT => OUTPUT
+    INPUT => pre_fp_out,
+    OUTPUT => tmp_output
 );
 
 end Structural;

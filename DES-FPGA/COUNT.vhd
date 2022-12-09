@@ -11,7 +11,7 @@ entity COUNT is
     port(
         UP, CLK, CLR: IN STD_LOGIC;
         DONE: OUT STD_LOGIC;    --outputs 1 if count is 1111
-        OUTPUT: OUT STD_LOGIC_VECTOR(3 downto 0)
+        OUTPUT: OUT STD_LOGIC_VECTOR(4 downto 0)
     );
 end COUNT;
 
@@ -33,7 +33,7 @@ begin
                 else
                     
                     if (UP = '1') then
-                        if(tmp = 15) then
+                        if(tmp = 17) then
                             tmp <= tmp;
                             DONE <= '1';
                         else
@@ -47,7 +47,7 @@ begin
             
         end if ;
 
-        OUTPUT <= std_logic_vector(to_unsigned(tmp, 4));
+        OUTPUT <= std_logic_vector(to_unsigned(tmp, 5));
     end process ; -- count
 
 

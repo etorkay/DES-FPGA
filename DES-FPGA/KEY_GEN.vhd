@@ -12,7 +12,7 @@ entity KEY_GEN is
 
         --control signals
         muxSel, CLK, rLoad, CLR: IN STD_LOGIC;
-        schdl_sel: IN STD_LOGIC_VECTOR(3 downto 0);
+        schdl_sel: IN STD_LOGIC_VECTOR(4 downto 0);
 
 
         OUTPUT: OUT STD_LOGIC_VECTOR(47 downto 0)
@@ -79,7 +79,7 @@ architecture Structural of KEY_GEN is
 
     component KEY_SCHDL
         port(
-            SEL: IN STD_LOGIC_VECTOR(3 downto 0);
+            SEL: IN STD_LOGIC_VECTOR(4 downto 0);
             CLK: IN STD_LOGIC;
             OUTPUT: OUT STD_LOGIC_VECTOR(1 downto 0)
         );

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/sessi/Documents/Code/Xilinux/DES/DES-FPGA/PRE_TOP_isim_beh1.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="pre_top" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="25" />
+   <wvobject fp_name="/pre_top/data_input" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_input[63:0]</obj_property>
+      <obj_property name="ObjectShortName">data_input[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/key_input" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">key_input[63:0]</obj_property>
+      <obj_property name="ObjectShortName">key_input[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/muxsel" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">muxsel</obj_property>
+      <obj_property name="ObjectShortName">muxsel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/clr" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clr</obj_property>
+      <obj_property name="ObjectShortName">clr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/dload" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dload</obj_property>
+      <obj_property name="ObjectShortName">dload</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/upcount" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">upcount</obj_property>
+      <obj_property name="ObjectShortName">upcount</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/functen" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">functen</obj_property>
+      <obj_property name="ObjectShortName">functen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/keymuxsel" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">keymuxsel</obj_property>
+      <obj_property name="ObjectShortName">keymuxsel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/keyload" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">keyload</obj_property>
+      <obj_property name="ObjectShortName">keyload</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/donesig" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">donesig</obj_property>
+      <obj_property name="ObjectShortName">donesig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/output" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">output[63:0]</obj_property>
+      <obj_property name="ObjectShortName">output[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/ip_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ip_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">ip_out[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/pre_output" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pre_output[63:0]</obj_property>
+      <obj_property name="ObjectShortName">pre_output[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/l_mux_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">l_mux_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">l_mux_out[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff0000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/r_mux_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r_mux_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_mux_out[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff0000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/round_num" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">round_num[3:0]</obj_property>
+      <obj_property name="ObjectShortName">round_num[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/key_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">key_out[47:0]</obj_property>
+      <obj_property name="ObjectShortName">key_out[47:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#008080</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/l_reg_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">l_reg_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">l_reg_out[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/r_reg_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r_reg_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_reg_out[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/funct_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">funct_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">funct_out[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/xor_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">xor_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xor_out[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider24" type="divider">
+      <obj_property name="label">COUNT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#ffff00</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/CNT0/output" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">output[3:0]</obj_property>
+      <obj_property name="ObjectShortName">output[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/pre_top/KGEN0/schdl_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">schdl_out[1:0]</obj_property>
+      <obj_property name="ObjectShortName">schdl_out[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
